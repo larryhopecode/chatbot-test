@@ -16,8 +16,8 @@ export default function Home() {
     iframeStyles(`
       .chat-frame {
         position: fixed;
-        bottom: 50px;
-        right: 50px;
+        bottom: 48px;
+        right: 48px;
         border: none;
       }
     `);
@@ -29,8 +29,8 @@ export default function Home() {
     window.addEventListener("message", (e) => {
       if (e.origin !== "http://localhost:3000") return null;
       let dimensions = JSON.parse(e.data);
-      iframe.width = dimensions.width;
-      iframe.height = dimensions.height;
+      iframe.width = dimensions.width +34
+      iframe.height = dimensions.height + 34
       iframe.contentWindow?.postMessage("66aebfd6574ba8e7c7febf38", "http://localhost:3000/");
     });
   }, []);
